@@ -8,7 +8,6 @@
       <option value="Albedo">アルベド</option>
       <option value="Amber">アンバー</option>
     </select>
-    <label form="charlabel">aaa</label>
     <script src="js/main.js">
     </script>
   </body>
