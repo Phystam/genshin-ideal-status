@@ -1,0 +1,24 @@
+{
+  "name": "genshin-ideal-status",
+  "version": "1.0.0",
+  "description": "原神ステータス配分計算機",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phystam/genshin-ideal-status.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phystam/genshin-ideal-status/issues"
+  },
+  "homepage": "https://github.com/Phystam/genshin-ideal-status#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fetch": "^1.1.0"
+  }
+}

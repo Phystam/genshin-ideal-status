@@ -1,0 +1,33 @@
+[
+    {
+	"ID": "cinnabarspindle",
+	"Name": "Cinnabar spindle",
+	"Rarity": 4,
+	"Type": "Sword",
+	"BaseATKType": 41,
+	"Stat": "DEF",
+	"Passive":
+	{
+	    "Condition": "",
+	    "Effect":
+	    {
+		"DMGDEF": [40,50,60,70,80]
+	    }
+	}
+    },
+    {
+	"ID": "favoniouswarbow",
+	"Name": "Favonious Warbow",
+	"Rarity": 4,
+	"Type": "Bow",
+	"BaseATKType": 41,
+	"Stat": "ER",
+	"Passive":
+	{
+	    "Condition": "",
+	    "Effect":
+	    {
+	    }
+	}
+    }
+]

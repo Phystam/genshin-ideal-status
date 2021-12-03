@@ -1,0 +1,18 @@
+{
+    "HPconst": 4780,
+    "ATKconst": 311,
+    "ATK": 0.466,
+    "DEF": 0.587,
+    "HP": 0.466,
+    "EM": 187,
+    "ER": 0.518,
+    "PhysDMG": 0.587,
+    "PyroDMG": 0.466,
+    "HydroDMG": 0.466,
+    "ElectroDMG": 0.466,
+    "CryoDMG": 0.466,
+    "AnemoDMG": 0.466,
+    "GeoDMG": 0.466,
+    "DendroDMG": 0.466,
+    "HealBonus": 0.359
+}

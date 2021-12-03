@@ -1,15 +1,182 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
-    <title>Genshin Ideal Status</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>原神サブステ配分計算機</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" media="all" type="text/css" href="css/ress.min.css">
+    <link rel="stylesheet" media="all" type="text/css" href="css/style.css">
+    <link type="text" href="database/character/amber.json">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <script type="text/javascript" src="js/main.js"></script>
   </head>
   <body>
-    <select name="characternamelist" style="width: 108px; margin-left: 114px; height: 23px; margin-top: 62px;">
-      <option value="Albedo">�A���x�h</option>
-      <option value="Amber">�A���o�[</option>
-    </select>
-    <label form="charlabel">aaa</label>
-    <script src="js/main.js">
-    </script>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col span-12 header">
+            <h1><span style="color: #666666;">原神サブステステータス配分</span></h1>
+            <div class="header-box"><a href=""><span class="contact-button">お問い合わせ</span></a></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col span-12">
+            <nav>
+              <div id="open"></div>
+              <div id="close"></div>
+              <div id="navi">
+                <ul>
+                  <li><a href="#1">基本設定</a></li>
+                  <li><a href="#2">詳細設定</a></li>
+                  <li><a href="#3">聖遺物設定</a></li>
+                  <li><a href="#4">外部バフ効果</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="1" class="a1st-back">
+        <div class="catch">
+          <h2><span class="under">基本設定<br>
+            </span></h2>
+          <p> キャラクター: 
+            <select name="charlist" id="charlist" onChange="updateCharacter();updateWeaponOption();updateWeapon();">
+            </select>
+            レベル:
+            <select name="charlevel">
+              <option>80/90</option>
+            </select>
+            命ノ星座:
+            <select name="constellation">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+          </p>
+          <p> 武器:
+            <select name="weaponlist" id="weaponlist" onChange="updateWeapon()">
+            </select>
+            レベル:
+            <select name="weaponlevel" id="weaponlevel" onChange="updateWeapon();">
+              <option value="0">60/70</option>
+              <option value="1">70/70</option>
+              <option value="2">70/80</option>
+              <option value="3">80/80</option>
+              <option value="4">80/90</option>
+              <option value="5">90/90</option>
+            </select>
+            精錬ランク:
+            <select name="refine">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </p>
+          <p> 時の砂:
+            <select name="sand" id="sand" onChange="updateArtifact(0);">
+              <option value="ATK">攻撃力</option>
+              <option value="HP">HP</option>
+              <option value="DEF">防御力</option>
+              <option value="ER">元素チャージ効率</option>
+              <option value="EM">元素熟知</option>
+            </select>
+            空の杯:
+            <select name="goblet" id="goblet" onChange="updateArtifact(1);">
+              <option value="ATK">攻撃力</option>
+              <option value="HP">HP</option>
+              <option value="DEF">防御力</option>
+              <option value="EM">元素熟知</option>
+              <option value="PhysDMG">物理ダメージ</option>
+              <option value="PyroDMG">炎元素ダメージ</option>
+              <option value="HydroDMG">水元素ダメージ</option>
+              <option value="ElectroDMG">雷元素ダメージ</option>
+              <option value="CryoDMG">氷元素ダメージ</option>
+              <option value="AnemoDMG">風元素ダメージ</option>
+              <option value="GeoDMG">岩元素ダメージ</option>
+              <option value="DendroDMG">草元素ダメージ</option>
+            </select>
+            理の冠:
+            <select name="circlet" id="circlet" onChange="updateArtifact(2);">
+              <option value="ATK">攻撃力</option>
+              <option value="HP">HP</option>
+              <option value="DEF">防御力</option>
+              <option value="EM">元素熟知</option>
+              <option value="CritRate">会心率</option>
+              <option value="CritDMG">会心ダメージ</option>
+              <option value="HealBonus">与える治療効果</option>
+            </select>
+          </p>
+          <p> 厳選度合い: <input name="effectivesubstats" value="10" type="text"></p>
+        </div>
+      </section>
+      <section id="1" class="a1st-back">
+        <h2 class="center"><span class="under">詳細設定<br>
+          </span></h2>
+        <div class="container center">
+          <div class="row">
+          </div>
+        </div>
+      </section>
+      <section id="2" class="a2nd-back">
+        <h2 class="center"><span class="under">聖遺物設定</span></h2>
+        <div class="container center"> </div>
+      </section>
+      <section id="3" class="a3rd-back">
+        <h2 class="center"><span class="under">外部バフ効果</span></h2>
+      </section>
+      <section id="4" class="a4th-back">
+        <h2 class="center"><span class="under">お問い合わせ</span></h2>
+        <div class="container">
+          <div class="row">
+            <div class="col span-6">
+              <div class="contact-box">
+                <p><img src="img/tel.png" alt="電話"></p>
+                <p>012-345-6789</p>
+              </div>
+            </div>
+            <div class="col span-6">
+              <div class="contact-box">
+                <p><img src="img/mail.png" alt="Eメール"></p>
+                <p>simple@mail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col span-4">
+            <h4>フッター1</h4>
+            <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
+          </div>
+          <div class="col span-4">
+            <h4>フッター2</h4>
+            <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
+          </div>
+          <div class="col span-4">
+            <h4>フッター3</h4>
+            <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="copyright"> <a href="https://popo-design.net" target="_blank">Copyright
+        © popodesign.</a> </div>
+    <p id="pagetop"><a href="#">TOP</a></p>
   </body>
 </html>
