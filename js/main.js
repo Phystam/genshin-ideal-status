@@ -179,9 +179,15 @@ function updateArtifact(i){
 	position = "sand";
     }
     const artifactselect = document.getElementById(position);
-    Reset(Artifact[i]);
-    Artifact[i][artifactselect.value] = Artifactstat[artifactselect.value];
-    console.log(Artifact[i].ATK);
+    const keys = Object.keys(Artifactstat);
+    for(let j in keys ) {
+	if(keys[j]==artifactselect.value){
+	    Artifact[i][keys[j]] = Artifactstat[artifactselect.value];
+	    console.log( "KEY:" + artifactselect.value + "Value:" + Artifact[i][keys[j]] );
+	}else{
+	    Artifact[i][keys[j]]=0;
+	}
+    }
 }
 
 function Reset(obj){
