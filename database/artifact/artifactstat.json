@@ -6,6 +6,8 @@
     "HP": 0.466,
     "EM": 187,
     "ER": 0.518,
+    "CritRate": 0.331,
+    "CritDMG": 0.662,
     "PhysDMG": 0.587,
     "PyroDMG": 0.466,
     "HydroDMG": 0.466,

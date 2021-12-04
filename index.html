@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>原神サブステ配分計算機</title>
+    <title>ShinSubStat.moe | 原神サブステ配分計算機</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <link rel="icon" type="image/png" href="img/favicon.png">
@@ -16,167 +16,300 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <div class="row">
-          <div class="col span-12 header">
-            <h1><span style="color: #666666;">原神サブステステータス配分</span></h1>
-            <div class="header-box"><a href=""><span class="contact-button">お問い合わせ</span></a></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col span-12">
-            <nav>
-              <div id="open"></div>
-              <div id="close"></div>
-              <div id="navi">
-                <ul>
-                  <li><a href="#1">基本設定</a></li>
-                  <li><a href="#2">詳細設定</a></li>
-                  <li><a href="#3">聖遺物設定</a></li>
-                  <li><a href="#4">外部バフ効果</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
+      <div class="header_container">
+	<img src="img/designheader.svg" width="100%" preserveAspectRatio="none">
       </div>
     </header>
     <main>
-      <section id="1" class="a1st-back">
-        <div class="catch">
-          <h2><span class="under">基本設定<br>
-            </span></h2>
-          <p> キャラクター: 
-            <select name="charlist" id="charlist" onChange="updateCharacter();updateWeaponOption();updateWeapon();">
-            </select>
-            レベル:
-            <select name="charlevel">
-              <option>80/90</option>
-            </select>
-            命ノ星座:
-            <select name="constellation">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-            </select>
-          </p>
-          <p> 武器:
-            <select name="weaponlist" id="weaponlist" onChange="updateWeapon()">
-            </select>
-            レベル:
-            <select name="weaponlevel" id="weaponlevel" onChange="updateWeapon();">
-              <option value="0">60/70</option>
-              <option value="1">70/70</option>
-              <option value="2">70/80</option>
-              <option value="3">80/80</option>
-              <option value="4">80/90</option>
-              <option value="5">90/90</option>
-            </select>
-            精錬ランク:
-            <select name="refine">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </p>
-          <p> 時の砂:
-            <select name="sand" id="sand" onChange="updateArtifact(0);">
-              <option value="ATK">攻撃力</option>
-              <option value="HP">HP</option>
-              <option value="DEF">防御力</option>
-              <option value="ER">元素チャージ効率</option>
-              <option value="EM">元素熟知</option>
-            </select>
-            空の杯:
-            <select name="goblet" id="goblet" onChange="updateArtifact(1);">
-              <option value="ATK">攻撃力</option>
-              <option value="HP">HP</option>
-              <option value="DEF">防御力</option>
-              <option value="EM">元素熟知</option>
-              <option value="PhysDMG">物理ダメージ</option>
-              <option value="PyroDMG">炎元素ダメージ</option>
-              <option value="HydroDMG">水元素ダメージ</option>
-              <option value="ElectroDMG">雷元素ダメージ</option>
-              <option value="CryoDMG">氷元素ダメージ</option>
-              <option value="AnemoDMG">風元素ダメージ</option>
-              <option value="GeoDMG">岩元素ダメージ</option>
-              <option value="DendroDMG">草元素ダメージ</option>
-            </select>
-            理の冠:
-            <select name="circlet" id="circlet" onChange="updateArtifact(2);">
-              <option value="ATK">攻撃力</option>
-              <option value="HP">HP</option>
-              <option value="DEF">防御力</option>
-              <option value="EM">元素熟知</option>
-              <option value="CritRate">会心率</option>
-              <option value="CritDMG">会心ダメージ</option>
-              <option value="HealBonus">与える治療効果</option>
-            </select>
-          </p>
-          <p> 厳選度合い: <input name="effectivesubstats" value="10" type="text"></p>
-        </div>
-      </section>
-      <section id="1" class="a1st-back">
-        <h2 class="center"><span class="under">詳細設定<br>
-          </span></h2>
-        <div class="container center">
-          <div class="row">
-          </div>
-        </div>
-      </section>
-      <section id="2" class="a2nd-back">
-        <h2 class="center"><span class="under">聖遺物設定</span></h2>
-        <div class="container center"> </div>
-      </section>
-      <section id="3" class="a3rd-back">
-        <h2 class="center"><span class="under">外部バフ効果</span></h2>
-      </section>
-      <section id="4" class="a4th-back">
-        <h2 class="center"><span class="under">お問い合わせ</span></h2>
-        <div class="container">
-          <div class="row">
-            <div class="col span-6">
-              <div class="contact-box">
-                <p><img src="img/tel.png" alt="電話"></p>
-                <p>012-345-6789</p>
-              </div>
-            </div>
-            <div class="col span-6">
-              <div class="contact-box">
-                <p><img src="img/mail.png" alt="Eメール"></p>
-                <p>simple@mail.com</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <aside id="statvalue">
+      <h2 class="center"><span class="under">ステータス</span></h2>
+      <div class="charstat">
+	<table>
+	  <caption>キャラクターデータ</caption>
+	  <thread>
+	    <td>パラメータ</td>
+	    <td>キャラクター</td>
+	    <td>武器</td>
+	    <td>聖遺物</td>
+	    <td>外部バフ効果</td>
+	    <td>総合ステータス</td>
+	  </thread>
+	  <tbody>
+	    <tr>
+	      <td>基礎HP</td>
+	      <td id="BaseHPstat"></td>
+	      <td id="BaseHPstat2"></td>
+	    </tr>
+	    <tr>
+	      <td>HP%</td>
+	      <td id="HPstat"></td>
+	      <td id="HPstatWeapon"></td>
+	      <td id="HPstatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td>HP実数</td>
+	      <td id="HPconststat"></td>
+	      <td id="HPconststatWeapon"></td>
+	      <td id="HPconststatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td>総HP</td>
+	      <td id="TotalHPstat"></td>
+	      <td id="TotalHPstat2"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/ATK.svg" class="stat_icon"></img>基礎攻撃力</td>
+	      <td id="BaseATKstat"></td>
+	      <td id="BaseATKstatWeapon"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/ATK.svg" class="stat_icon"></img>攻撃力%</td>
+	      <td id="ATKstat"></td>
+	      <td id="ATKstatWeapon"></td>
+	      <td id="ATKstatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/ATK.svg" class="stat_icon"></img>攻撃力実数</td>
+	      <td id="ATKconststat"></td>
+	      <td id="ATKconststatWeapon"></td>
+	      <td id="ATKconststatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/ATK.svg" class="stat_icon"></img>総攻撃力</td>
+	      <td id="TotalATKstat"></td>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/DEF.svg" class="stat_icon"></img>基礎防御力</td>
+	      <td id="BaseDEFstat"></td>
+	      <td id="BaseDEFstatWeapon"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/DEF.svg" class="stat_icon"></img>防御力%</td>
+	      <td id="DEFstat" maxlength="5"></td>
+	      <td id="DEFstatWeapon" maxlength="5"></td>
+	      <td id="DEFstatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/DEF.svg" class="stat_icon"></img>防御力実数</td>
+	      <td id="DEFstat"></td>
+	      <td id="DEFconststatWeapon"></td>
+	      <td id="DEFconststatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/DEF.svg" class="stat_icon"></img>総防御力</td>
+	      <td id="TotalDEFstat"></td>
+	      <td id="TotalDEFstatWeapon"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/EM.svg" class="stat_icon"></img>元素熟知</td>
+	      <td id="EMstat"></td>
+	      <td id="EMstatWeapon"></td>
+	      <td id="EMstatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/ER.svg" class="stat_icon"></img>元素チャージ効率</td>
+	      <td id="ERstat"></td>
+	      <td id="ERstatWeapon"></td>
+	      <td id="ERstatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/Crit.svg" class="stat_icon"></img>会心率</td>
+	      <td id="CritRatestat"></td>
+	      <td id="CritRatestatWeapon"></td>
+	      <td id="CritRatestatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/Crit.svg" class="stat_icon"></img>会心ダメージ</td>
+	      <td id="CritDMGstat"></td>
+	      <td id="CritDMGstatWeapon"></td>
+	      <td id="CritDMGstatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/Pyro.svg" class="stat_icon"></img>物理ダメージ</td>
+	      <td id="PhysDMGstat"></td>
+	      <td id="PhysDMGstatWeapon"></td>
+	      <td id="PhysDMGstatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/Pyro.svg" class="stat_icon"></img>炎元素ダメージ</td>
+	      <td id="PyroDMGstat"></td>
+	      <td id="PyroDMGstatWeapon"></td>
+	      <td id="PyroDMGstatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/Hydro.svg" class="stat_icon"></img>水元素ダメージ</td>
+	      <td id="HydroDMGstat"></td>
+	      <td id="HydroDMGstatWeapon"></td>
+	      <td id="HydroDMGstatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/Electro.svg" class="stat_icon"></img>雷元素ダメージ</td>
+	      <td id="ElectroDMGstat"></td>
+	      <td id="ElectroDMGstatWeapon"></td>
+	      <td id="ElectroDMGstatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/Cryo.svg" class="stat_icon"></img>氷元素ダメージ</td>
+	      <td id="CryoDMGstat"></td>
+	      <td id="CryoDMGstatWeapon"></td>
+	      <td id="CryoDMGstatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/Anemo.svg" class="stat_icon"></img>風元素ダメージ</td>
+	      <td id="AnemoDMGstat"></td>
+	      <td id="AnemoDMGstatWeapon"></td>
+	      <td id="AnemoDMGstatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/Geo.svg" class="stat_icon"></img>岩元素ダメージ</td>
+	      <td id="GeoDMGstat"></td>
+	      <td id="GeoDMGstatWeapon"></td>
+	      <td id="GeoDMGstatArtifact"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/Dendro.svg" class="stat_icon"></img>草元素ダメージ</td>
+	      <td id="DendroDMGstat"></td>
+	      <td id="DendroDMGstatWeapon"></td>
+	      <td id="DendroDMGstatArtifact"></td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+    </aside>
+    <article>
+      <div class="catch">
+        <h2><span class="under">基本設定<br>
+        </span></h2>
+        <p> キャラクター:
+          <select name="charlist" id="charlist" onchange="updateCharacter();updateWeaponOption();updateWeapon();">
+          </select>
+          レベル:
+          <select name="charlevel" id="charlevel" onchange="updateCharacter();updateWeaponOption();updateWeapon();">
+            <option value="0">60/60</option>
+            <option value="1">60/70</option>
+            <option value="2">70/70</option>
+            <option value="3">70/80</option>
+            <option value="4">80/80</option>
+            <option value="5">80/90</option>
+            <option value="6">90/90</option>
+          </select>
+          命ノ星座:
+          <select name="constellation" id="constellation">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </p>
+        <p> 武器:
+          <select name="weaponlist" id="weaponlist" onchange="updateWeapon()">
+          </select>
+          レベル:
+          <select name="weaponlevel" id="weaponlevel" onchange="updateWeapon();">
+            <option value="0">60/70</option>
+            <option value="1">70/70</option>
+            <option value="2">70/80</option>
+            <option value="3">80/80</option>
+            <option value="4">80/90</option>
+            <option value="5">90/90</option>
+          </select>
+          精錬ランク:
+          <select name="refine">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </p>
+        <p> 時の砂:
+          <select name="sand" id="sand" onchange="updateArtifact(0);">
+            <option value="ATK">攻撃力</option>
+            <option value="HP">HP</option>
+            <option value="DEF">防御力</option>
+            <option value="ER">元素チャージ効率</option>
+            <option value="EM">元素熟知</option>
+          </select>
+          空の杯:
+          <select name="goblet" id="goblet" onchange="updateArtifact(1);">
+            <option value="ATK">攻撃力</option>
+            <option value="HP">HP</option>
+            <option value="DEF">防御力</option>
+            <option value="EM">元素熟知</option>
+            <option value="PhysDMG">物理ダメージ</option>
+            <option value="PyroDMG">炎元素ダメージ</option>
+            <option value="HydroDMG">水元素ダメージ</option>
+            <option value="ElectroDMG">雷元素ダメージ</option>
+            <option value="CryoDMG">氷元素ダメージ</option>
+            <option value="AnemoDMG">風元素ダメージ</option>
+            <option value="GeoDMG">岩元素ダメージ</option>
+            <option value="DendroDMG">草元素ダメージ</option>
+          </select>
+          理の冠:
+          <select name="circlet" id="circlet" onchange="updateArtifact(2);">
+            <option value="ATK">攻撃力</option>
+            <option value="HP">HP</option>
+            <option value="DEF">防御力</option>
+            <option value="EM">元素熟知</option>
+            <option value="CritRate">会心率</option>
+            <option value="CritDMG">会心ダメージ</option>
+            <option value="HealBonus">与える治療効果</option>
+          </select>
+        </p>
+        <p> 厳選度合い: <input name="effectivesubstats" value="10" type="text"></p>
+      </div>
+      <div class="catch">
+	  <h2 class="center"><span class="under">詳細設定<br>
+	  </span></h2>
+	  <p> 固有天賦1: <label for="passive1check" id="passive1text"></label> <input
+										 
+										 id="passive1check" onclick="updateCharacter()" type="checkbox"> </p>
+	  <p> 固有天賦2: <label for="passive2check" id="passive2text"></label> <input
+
+										 id="passive2check" onclick="updateCharacter()" type="checkbox"> </p>
+	  <p> 命ノ星座 第1重: <label for="passive1check" id="c1text"></label> <input
+
+										id="c1check" onclick="updateCharacter()" type="checkbox"> </p>
+	  <p>命ノ星座 第2重: <label for="passive2check" id="c2text"></label> <input
+
+									       id="c2check" onclick="updatePassive()" type="checkbox"> </p>
+	</div>
+      <h2 class="center"><span class="under">聖遺物設定</span></h2>
+      <div class="container center"> </div>
+      <h2 class="center"><span class="under">外部バフ効果</span></h2>
+      <h2 class="center"><span class="under">計算結果</span></h2>
+      <p> <button name="calcbutton" onclick="calcDamage()">計算！</button> </p>
+    </article>
     </main>
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="col span-4">
+	<div class="row">
+	  <div class="col span-4">
             <h4>フッター1</h4>
             <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
-          </div>
-          <div class="col span-4">
+	  </div>
+	  <div class="col span-4">
             <h4>フッター2</h4>
             <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
-          </div>
-          <div class="col span-4">
+	  </div>
+	  <div class="col span-4">
             <h4>フッター3</h4>
             <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
-          </div>
-        </div>
+	  </div>
+	</div>
       </div>
     </footer>
     <div class="copyright"> <a href="https://popo-design.net" target="_blank">Copyright
-        © popodesign.</a> </div>
+	© popodesign.</a> </div>
     <p id="pagetop"><a href="#">TOP</a></p>
+    <button name="calcbutton" value="計算！"></button>
+
   </body>
 </html>
